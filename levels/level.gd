@@ -5,3 +5,4 @@ class_name Level
 
 @export var doors:Array[Door]
 @export var start_items:Array[BaseItem]
+@export var start_door:Door

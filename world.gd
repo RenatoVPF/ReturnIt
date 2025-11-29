@@ -31,4 +31,7 @@ func swap_level(new_level:String):
 
 func set_level():
 	for i in current_level.start_items:
-		player.add_item(i)
+		if player.items.size() < player.item_limit:
+			player.add_item(i.duplicate(false))
+	
+	player.global_position = current_level.start_door.global_position

@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://world.gd" id="1_b16gl"]
 [ext_resource type="PackedScene" uid="uid://dgrafqq5y8er7" path="res://player.tscn" id="2_nd312"]
-[ext_resource type="PackedScene" uid="uid://bw2xbltvlnkmb" path="res://levels/level1.tscn" id="3_vifs0"]
+[ext_resource type="PackedScene" uid="uid://8ju5m2l4fhv7" path="res://levels/level_main.tscn" id="3_4eydd"]
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("current_level")]
 z_index = 1
 script = ExtResource("1_b16gl")
-current_level = NodePath("Level")
-
-[node name="Level" parent="." instance=ExtResource("3_vifs0")]
+current_level = NodePath("Level_main")
 
 [node name="player" parent="." instance=ExtResource("2_nd312")]
 z_index = 1
-position = Vector2(480, 544)
+position = Vector2(192, 544)
+
+[node name="Level_main" parent="." instance=ExtResource("3_4eydd")]

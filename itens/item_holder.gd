@@ -26,8 +26,16 @@ func _on_body_exited(body: Node2D) -> void:
 func interact(player: Player):
 	# quando interage com um pedestal ele checa se aqui tem um item
 	# se tiver coloca uma copia dele nos items do jogador e apaga o item daqui
+	
 	if item:
-		player.add_item(item)
+		if player.items.size() >= player.item_limit:
+			player.add_item(item.duplicate(false))
+			item = player.items[0]
+			player.remove_item(item)
+			$ColorRect2.color = item.color
+			return
+		
+		player.add_item(item.duplicate(false))
 		item = null
 		$ColorRect2.color = Color.BLACK
 	

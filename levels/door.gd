@@ -10,6 +10,8 @@ signal swap_level
 # isso é todos os lugares em que coloca items que essa porta vai pecisar pra abrir
 @export var needs:Array[ItemHolder]
 
+@export var exit_door:bool = true
+
 var open:bool = false
 
 func _ready() -> void:

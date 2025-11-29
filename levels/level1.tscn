@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bw2xbltvlnkmb"]
+[gd_scene load_steps=11 format=4 uid="uid://bw2xbltvlnkmb"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_utaey"]
 [ext_resource type="Script" path="res://itens/scripts/BaseItem.gd" id="2_5vu0j"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4dr7egi474s4" path="res://Selection 2025-11-18T12.54.28.png" id="4_tduwc"]
 [ext_resource type="PackedScene" uid="uid://dytmvvxiryyvp" path="res://levels/door.tscn" id="5_kp5ui"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lef3a"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4ufs"]
 texture = ExtResource("4_tduwc")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
@@ -402,26 +402,36 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(1, 0.345098, 0.25098, 1)
-sources/0 = SubResource("TileSetAtlasSource_lef3a")
+sources/0 = SubResource("TileSetAtlasSource_t4ufs")
 
-[node name="Level" type="Node2D" node_paths=PackedStringArray("doors")]
+[sub_resource type="LabelSettings" id="LabelSettings_3biua"]
+font_size = 32
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("doors", "start_door")]
 script = ExtResource("1_utaey")
 doors = [NodePath("Door")]
 start_items = Array[ExtResource("2_5vu0j")]([ExtResource("3_7axgu"), ExtResource("3_a4ifb")])
+start_door = NodePath("Door")
 
 [node name="ItemHolder" parent="." instance=ExtResource("2_drf0y")]
 position = Vector2(1032, 512)
-item = null
 
 [node name="ItemHolder2" parent="." instance=ExtResource("2_drf0y")]
 position = Vector2(104, 512)
-item = null
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAkAAAAAAAMAAAABAAkAAAABAAMAAAACAAkAAAABAAMAAAADAAkAAAABAAMAAAAEAAkAAAABAAMAAAAFAAkAAAABAAMAAAAGAAkAAAABAAMAAAAHAAkAAAABAAMAAAAIAAkAAAAGAAMAAAAJAAkAAAABAAIAAAAKAAkAAAABAAIAAAALAAkAAAAFAAMAAAAMAAkAAAABAAMAAAANAAkAAAABAAMAAAAOAAkAAAABAAMAAAAPAAkAAAABAAMAAAAQAAkAAAABAAMAAAARAAkAAAACAAMAAAAIAAgAAAAAAAEAAAAIAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAUAAAAAAAAAAAAKAAgAAAABAAEAAAALAAgAAAACAAEAAAALAAcAAAACAAAAAAAKAAcAAAABAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAEAAAAJAAcAAAAFAAIAAAAJAAgAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAkAAAABAAMAAAABAAkAAAABAAMAAAACAAkAAAABAAMAAAADAAkAAAABAAMAAAAEAAkAAAABAAMAAAAFAAkAAAABAAMAAAAGAAkAAAABAAMAAAAHAAkAAAABAAMAAAAIAAkAAAAGAAMAAAAJAAkAAAABAAIAAAAKAAkAAAABAAIAAAALAAkAAAAFAAMAAAAMAAkAAAABAAMAAAANAAkAAAABAAMAAAAOAAkAAAABAAMAAAAPAAkAAAABAAMAAAAQAAkAAAABAAMAAAARAAkAAAABAAMAAAAIAAgAAAAAAAEAAAAIAAcAAAAAAAEAAAAIAAYAAAAAAAEAAAAIAAUAAAAAAAAAAAAKAAgAAAABAAEAAAALAAgAAAACAAEAAAALAAcAAAACAAAAAAAKAAcAAAABAAAAAAAJAAUAAAACAAAAAAAJAAYAAAACAAEAAAAJAAcAAAAFAAIAAAAJAAgAAAABAAEAAAD//wkAAAAEAAMAAAD//wgAAAADAAEAAAD//wcAAAADAAEAAAD//wYAAAADAAEAAAD//wUAAAADAAEAAAD//wQAAAADAAEAAAD//wMAAAADAAEAAAD//wIAAAADAAEAAAD//wEAAAADAAEAAAD//wAAAAADAAAAAAASAAkAAAAHAAMAAAASAAgAAAADAAEAAAASAAcAAAADAAEAAAASAAYAAAADAAEAAAASAAUAAAADAAEAAAASAAQAAAADAAEAAAASAAMAAAADAAEAAAASAAIAAAADAAEAAAASAAEAAAADAAEAAAASAAAAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_rpll6")
 
 [node name="Door" parent="." node_paths=PackedStringArray("needs") instance=ExtResource("5_kp5ui")]
-position = Vector2(352, 520)
-goes_to = "res://levels/level_2.tscn"
+position = Vector2(352, 544)
+goes_to = "res://levels/level_main.tscn"
 needs = [NodePath("../ItemHolder2"), NodePath("../ItemHolder")]
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 400.0
+offset_right = 394.0
+offset_bottom = 445.0
+text = "saida"
+label_settings = SubResource("LabelSettings_3biua")

@@ -10,6 +10,8 @@ class_name Player
 #o array pra guardar todos os items
 @export var items:Array[BaseItem]
 
+var item_limit:int = 5
+
 # é criado pra mostrar a cor e o nome dos items que vc tem no iventario
 @export var itemDisplay:PackedScene
 

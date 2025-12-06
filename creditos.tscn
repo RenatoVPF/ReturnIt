@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dow3ld3vy10pn"]
+
+[ext_resource type="Script" uid="uid://bgm5eku1cmhfn" path="res://creditos.gd" id="1_alf7g"]
+[ext_resource type="Texture2D" uid="uid://dncvm8cc4vvsa" path="res://ChatGPT Image 5 de dez. de 2025, 18_21_19.png" id="2_3rtis"]
+[ext_resource type="FontFile" uid="uid://dv2mjbaro4snn" path="res://UncialAntiqua-Regular.ttf" id="3_cysqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3rbuu"]
+font = ExtResource("3_cysqe")
+font_size = 34
+font_color = Color(1, 0.959368, 0.753196, 1)
+shadow_size = 6
+shadow_color = Color(0.479634, 0.375166, 0.290286, 0.917647)
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_alf7g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3rtis")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -180.5
+offset_right = 183.5
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+text = "Créditos
+Equipe de Desenvolvimento
+
+Maria Luiza Cezar – Programação
+
+Leonardo Quintela Correia Lima – Programação
+
+Gabriel Ferreira Bernardo – Programação
+
+Renato Veloso Pires Filho – Programação
+
+Gabriel Lima Dantas – Arte
+
+Guilherme Corrêa Mesquita – Game Design"
+label_settings = SubResource("LabelSettings_3rbuu")
+
+[node name="Voltar" type="Button" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.812278, 0.77325, 0.566398, 1)
+theme_override_fonts/font = ExtResource("3_cysqe")
+theme_override_font_sizes/font_size = 37
+text = "Voltar"
+flat = true

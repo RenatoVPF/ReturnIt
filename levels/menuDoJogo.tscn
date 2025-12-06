@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyvqsda1dp04c"]
+
+[ext_resource type="Texture2D" uid="uid://dncvm8cc4vvsa" path="res://ChatGPT Image 5 de dez. de 2025, 18_21_19.png" id="1_1l6qa"]
+[ext_resource type="Script" uid="uid://dqdman5b4qim" path="res://levels/menu_do_jogo.gd" id="1_ukrup"]
+[ext_resource type="FontFile" uid="uid://dv2mjbaro4snn" path="res://UncialAntiqua-Regular.ttf" id="3_d3l4e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ghrw5"]
+font = ExtResource("3_d3l4e")
+font_size = 72
+font_color = Color(0.905882, 0.701961, 0.286275, 1)
+outline_size = 6
+outline_color = Color(0.927686, 0.731949, 0.543155, 0.858824)
+shadow_size = 18
+shadow_color = Color(0.72549, 0.388235, 0.203922, 0.721569)
+
+[node name="MenuDoJogo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukrup")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0383711, 0.0373546, 0.0373546, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1l6qa")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -142.0
+offset_top = -213.8
+offset_right = 135.0
+offset_bottom = 235.2
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+text = "Return it
+hero!"
+label_settings = SubResource("LabelSettings_ghrw5")
+horizontal_alignment = 1
+
+[node name="jogar" type="Button" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.831373, 0.780392, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_d3l4e")
+theme_override_font_sizes/font_size = 45
+text = "INICIAR"
+flat = true
+
+[node name="creditos" type="Button" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831373, 0.780392, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_d3l4e")
+theme_override_font_sizes/font_size = 38
+text = "CREDITOS"
+flat = true
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831373, 0.780392, 0.705882, 1)
+theme_override_fonts/font = ExtResource("3_d3l4e")
+theme_override_font_sizes/font_size = 38
+text = "SAIR"
+flat = true
+
+[node name="popUpControle" type="AcceptDialog" parent="."]
+title = "Controles"
+size = Vector2i(217, 210)
+dialog_text = "CONTROLES DO JOGADOR
+
+Movimento: W, A, S, D
+Pular: Espaço
+Interagir: I
+Recarregar nível: R"

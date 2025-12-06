@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://vjyrmvm6k7p1"]
+
+[ext_resource type="Script" uid="uid://cql3cvxqxthrp" path="res://tiles/eletric_door.gd" id="1_e4od2"]
+[ext_resource type="Script" uid="uid://vaylndyj7qe3" path="res://area_2d.gd" id="2_2d725"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sairk"]
+resource_local_to_scene = true
+size = Vector2(48, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vpbd"]
+resource_local_to_scene = true
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8omnw"]
+resource_local_to_scene = true
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ke7x"]
+size = Vector2(64, 8)
+
+[node name="EletricDoor" type="CharacterBody2D"]
+rotation = 4.71239
+collision_layer = 5
+collision_mask = 5
+platform_on_leave = 2
+script = ExtResource("1_e4od2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_sairk")
+
+[node name="eletric_checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="eletricColision" type="CollisionShape2D" parent="eletric_checker"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_0vpbd")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="areaColision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_8omnw")
+
+[node name="Charger" type="Area2D" parent="." groups=["conductors"]]
+collision_layer = 12
+collision_mask = 4
+script = ExtResource("2_2d725")
+
+[node name="ChargerCollision" type="CollisionShape2D" parent="Charger"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_6ke7x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -96.0
+offset_right = 24.0
+offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
+[connection signal="body_shape_entered" from="Charger" to="Charger" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="Charger" to="Charger" method="_on_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="." method="refresh"]

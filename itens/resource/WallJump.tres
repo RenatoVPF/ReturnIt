@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WallJump" load_steps=2 format=3 uid="uid://d3viam6na5o5p"]
+
+[ext_resource type="Script" uid="uid://ch8g4qx4y6r88" path="res://itens/scripts/walljump.gd" id="1_72ms7"]
+
+[resource]
+script = ExtResource("1_72ms7")
+name = "Escalada"
+color = Color(0.588975, 0.245751, 0.890338, 1)

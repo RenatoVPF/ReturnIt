@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwy0r7d4y8r1a"]
+[gd_scene load_steps=5 format=3 uid="uid://bwy0r7d4y8r1a"]
 
-[ext_resource type="Script" uid="uid://12seeps1cffe" path="res://itens/item_holder.gd" id="1_3hc54"]
-[ext_resource type="Texture2D" uid="uid://dadohyfkdmf5d" path="res://pedestal-jarro.png" id="2_rul6o"]
+[ext_resource type="Script" path="res://itens/item_holder.gd" id="1_3hc54"]
+[ext_resource type="Texture2D" uid="uid://dadohyfkdmf5d" path="res://pixel art/pedestal-jarro.png" id="2_rul6o"]
+[ext_resource type="Texture2D" uid="uid://c4dr7egi474s4" path="res://pixel art/Selection 2025-11-18T12.54.28.png" id="3_wk23d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o02u6"]
 radius = 32.0
@@ -18,11 +19,18 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_rul6o")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -88.0
 offset_right = 16.0
 offset_bottom = -56.0
 color = Color(0, 0, 0, 1)
+
+[node name="colorSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("3_wk23d")
+region_enabled = true
+region_rect = Rect2(584, 264, 48, 48)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -5,13 +5,14 @@ signal update_door
 
 # onde o item fica "guardado"
 @export var item:BaseItem
+@onready var color_sprite: Sprite2D = $colorSprite
 
 func _ready() -> void:
 	# se tiver um item a caixa no meio usa a cor dele, se não fica preta
 	if item:
-		$ColorRect2.color = item.color
+		color_sprite.modulate = item.color
 		return
-	$ColorRect2.color = Color.TRANSPARENT
+	color_sprite.modulate = Color.TRANSPARENT
 
 # se colocando ou tirando das areas de interação do jogador
 func _on_body_entered(body: Node2D) -> void:
@@ -32,17 +33,17 @@ func interact(player: Player):
 			player.add_item(item.duplicate(false))
 			item = player.items[0]
 			player.remove_item(item)
-			$ColorRect2.color = item.color
+			color_sprite.modulate = item.color
 			return
 		
 		player.add_item(item.duplicate(false))
 		item = null
-		$ColorRect2.color = Color.TRANSPARENT
+		color_sprite.modulate = Color.TRANSPARENT
 	
 	# se não cria uma copia do item aqui e apaga o do jogador
 	elif player.items.size() > 0:
 		item = player.items[0]
 		player.remove_item(item)
-		$ColorRect2.color = item.color
+		color_sprite.modulate = item.color
 	
 	emit_signal("update_door")

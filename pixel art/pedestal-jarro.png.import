@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8j44ek5vcsh6"
-path="res://.godot/imported/Fundo-masmorra.jpg-e62992567d03fcbce06072d868e016c1.ctex"
+uid="uid://dadohyfkdmf5d"
+path="res://.godot/imported/pedestal-jarro.png-4d79e4428bb26038dd819e9bfe58bacd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fundo-masmorra.jpg"
-dest_files=["res://.godot/imported/Fundo-masmorra.jpg-e62992567d03fcbce06072d868e016c1.ctex"]
+source_file="res://pixel art/pedestal-jarro.png"
+dest_files=["res://.godot/imported/pedestal-jarro.png-4d79e4428bb26038dd819e9bfe58bacd.ctex"]
 
 [params]
 

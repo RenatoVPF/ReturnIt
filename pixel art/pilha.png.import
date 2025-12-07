@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtyd2f7me70x1"
-path="res://.godot/imported/pilha.png-043181af8e86ea892880a801e62fbdf7.ctex"
+path="res://.godot/imported/pilha.png-85981b99b84dce85c13611738af22a56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pilha.png"
-dest_files=["res://.godot/imported/pilha.png-043181af8e86ea892880a801e62fbdf7.ctex"]
+source_file="res://pixel art/pilha.png"
+dest_files=["res://.godot/imported/pilha.png-85981b99b84dce85c13611738af22a56.ctex"]
 
 [params]
 

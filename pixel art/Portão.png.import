@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hctypf5rugrb"
-path="res://.godot/imported/caixa.png-1e662fbb2adf9c7806dd7ecb95fc52cf.ctex"
+uid="uid://bpy1p7e0pkbgo"
+path="res://.godot/imported/Portão.png-cb489d802d737e573e8f4b9580e6a3e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://caixa.png"
-dest_files=["res://.godot/imported/caixa.png-1e662fbb2adf9c7806dd7ecb95fc52cf.ctex"]
+source_file="res://pixel art/Portão.png"
+dest_files=["res://.godot/imported/Portão.png-cb489d802d737e573e8f4b9580e6a3e5.ctex"]
 
 [params]
 

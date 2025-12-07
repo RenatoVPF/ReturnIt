@@ -13,9 +13,13 @@ class_name EletricDoor
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @onready var charger_collision: CollisionShape2D = $Charger/ChargerCollision
+@onready var door_top_text: Sprite2D = $Charger/ChargerCollision/door_top_text
 
 # se a porta deve se fechar ou abrir quando recebe energia
 @export var close_on_power:bool = false
+
+var unpowerd_region:Rect2 = Rect2(132,290,56,28)
+var powerd_region:Rect2 = Rect2(72,290,56,28)
 
 var time_to_refresh:float = 0.1
 
@@ -46,6 +50,7 @@ func _ready() -> void:
 	# quando a cena começa
 	color_rect.color = Color.WHITE
 	charger_collision.disabled = true
+	door_top_text.region_rect = unpowerd_region
 	
 	# coloca os valores das areas da porta pros seus valor inicia dependedo se tiver aberta ou não
 	if close_on_power:
@@ -118,6 +123,7 @@ func refresh():
 
 func power():
 	# se já tiver um tween rolando para ele e cria um novo
+	door_top_text.region_rect = powerd_region
 	if tween:
 		tween.kill()
 	tween = get_tree().create_tween()
@@ -141,6 +147,7 @@ func unpower():
 	# primeiro checa se não tem mais nada carregando a porta
 	# pegando todas os corpos dentro da eletric_checker
 	# se for condutor ou um eletric map retorna a função
+	door_top_text.region_rect = unpowerd_region
 	for i in eletric_checker.get_overlapping_bodies():
 		if i is EletricMap:
 			return

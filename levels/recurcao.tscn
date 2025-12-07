@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dytmvvxiryyvp" path="res://Interactbles/door.tscn" id="4_fmv4v"]
 [ext_resource type="PackedScene" uid="uid://bwy0r7d4y8r1a" path="res://itens/item_holder.tscn" id="5_hldhu"]
 [ext_resource type="TileSet" uid="uid://duciivmq1v4jy" path="res://levels/tile.tres" id="6_tiruc"]
-[ext_resource type="Texture2D" uid="uid://b8j44ek5vcsh6" path="res://Fundo-masmorra.jpg" id="7_h42s7"]
+[ext_resource type="Texture2D" uid="uid://b8j44ek5vcsh6" path="res://pixel art/Fundo-masmorra.jpg" id="7_h42s7"]
 
 [node name="Level3" type="Node2D" node_paths=PackedStringArray("doors")]
 script = ExtResource("1_7edyj")
@@ -18,6 +18,7 @@ repeat_size = Vector2(474, 282)
 repeat_times = 3
 
 [node name="Fundo-masmorra" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+modulate = Color(0.29219, 0.29219, 0.29219, 1)
 position = Vector2(440, 448)
 texture = ExtResource("7_h42s7")
 

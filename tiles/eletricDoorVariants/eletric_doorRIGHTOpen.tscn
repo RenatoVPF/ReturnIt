@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://0coj8iydxc0x"]
+[gd_scene load_steps=8 format=3 uid="uid://0coj8iydxc0x"]
 
-[ext_resource type="Script" uid="uid://cql3cvxqxthrp" path="res://tiles/eletric_door.gd" id="1_1j0ps"]
-[ext_resource type="Script" uid="uid://vaylndyj7qe3" path="res://area_2d.gd" id="2_tu4uq"]
+[ext_resource type="Script" path="res://tiles/eletric_door.gd" id="1_1j0ps"]
+[ext_resource type="Script" path="res://area_2d.gd" id="2_tu4uq"]
+[ext_resource type="Texture2D" uid="uid://c4dr7egi474s4" path="res://pixel art/Selection 2025-11-18T12.54.28.png" id="3_1p36s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sairk"]
 resource_local_to_scene = true
@@ -46,6 +47,13 @@ collision_mask = 4
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_8omnw")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -96.0
+offset_right = 24.0
+offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Charger" type="Area2D" parent="." groups=["conductors"]]
 collision_layer = 12
 collision_mask = 4
@@ -55,12 +63,11 @@ script = ExtResource("2_tu4uq")
 position = Vector2(3.04223e-05, 32)
 shape = SubResource("RectangleShape2D_6ke7x")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -24.0
-offset_top = -96.0
-offset_right = 24.0
-offset_bottom = 32.0
-metadata/_edit_use_anchors_ = true
+[node name="door_top_text" type="Sprite2D" parent="Charger/ChargerCollision"]
+position = Vector2(0, -13)
+texture = ExtResource("3_1p36s")
+region_enabled = true
+region_rect = Rect2(131, 289, 57, 29)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
